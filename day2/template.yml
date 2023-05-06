@@ -1,0 +1,17 @@
+- name: play1
+  hosts: web_server
+  gather_facts: false
+  vars:
+    welcome_msg: hello man how are you 
+  tasks:
+  
+
+  - name: task with template
+    template:
+      src: ./hello.html.j2
+      dest: /var/www/html/index.html
+      
+  
+
+
+  

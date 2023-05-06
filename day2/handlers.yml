@@ -1,0 +1,24 @@
+- name: play1
+  hosts: web_server
+  gather_facts: false
+  tasks:
+  # - name:  update
+  #   apt: 
+  #     update_cache: true
+      
+  - name:  install with handlers
+    package: 
+      name: nginx
+    notify: my_handler
+    changed_when: true
+
+  - name: task 2
+    command: echo hi
+
+  handlers:
+  - name: my_handler
+    service:
+      name: nginx
+      state: restarted
+
+  

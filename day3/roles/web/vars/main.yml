@@ -1,0 +1,7 @@
+package_name: nginx
+my_list:
+  #- script.js
+  #- index.html.j2
+  - style.css
+
+wlecome : "hello people from all over the world  peace be upon you!! "

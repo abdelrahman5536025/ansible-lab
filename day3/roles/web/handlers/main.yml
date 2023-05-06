@@ -1,0 +1,14 @@
+- name: copying  
+  copy: 
+    src: "{{ item }}"
+    dest: /var/www/html/
+  loop: "{{ my_list }}"
+  notify:
+    - restarting
+
+
+- name: restarting
+  service: 
+     name: "{{ package_name }}"
+     state: restarted
+     #there should be handler

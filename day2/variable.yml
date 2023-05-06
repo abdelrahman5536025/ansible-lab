@@ -1,0 +1,22 @@
+- name: play1
+  hosts: web_server
+  gather_facts: false
+  # vars:
+  #   package_name: nginx
+  #   package_state: latest
+  vars_files:
+    - ./test.yml
+  tasks:
+  - name:  update
+    apt: 
+      update_cache: true
+      
+  - name:  install
+    
+    package: 
+      name: "{{ package_name }}"
+      state: "{{ package_state }}"
+  
+  
+
+  

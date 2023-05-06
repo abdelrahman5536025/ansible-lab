@@ -1,0 +1,28 @@
+- name: play1
+  hosts: web_server
+  gather_facts: false
+  # vars:
+  #   my_list:
+  #     - nginx
+  #     - curl 
+  #     - sudo 
+  #     - ssh
+
+  tasks:
+  
+      
+  - name:  install
+    apt: 
+      name: "{{ item.package_name }}"
+      state: "{{ item.package_state }}" #"{{ item.package_state }}"
+    loop: 
+      - {package_name: "nginx",package_state: "latest"}
+      - {package_name: "curl",package_state: "latest"}
+      # - { package_name: "nginx", package_state: "present"}
+      # - { package_name: "curl", package_state: "latest"}
+      
+      
+      
+  
+
+  

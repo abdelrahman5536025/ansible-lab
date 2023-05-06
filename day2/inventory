@@ -1,0 +1,14 @@
+[web_server]
+172.17.0.2  
+
+[database_server]
+172.17.0.1
+172.17.0.3
+172.17.0.4
+172.17.0.5
+172.17.0.6
+
+[database_server:vars]
+package_name=nginx
+package_state=latest
+
